@@ -8,7 +8,7 @@
 ## 1. 快速开始
 
 ```bash
-npm install          # 依赖已固定，含 @esbuild/win32-x64（见 §6）
+npm install          # 按当前系统安装 esbuild 平台包（见 §6）
 npm run dev          # http://127.0.0.1:5273
 npm test             # 实际项数以本轮输出为准
 npm run typecheck    # vue-tsc
@@ -150,9 +150,8 @@ V2 的 Step 9（6–8 名受试者、T/C/M 三指标）需要真人，本实现�
 
 ## 6. 环境备注
 
-- 首次 `npm install` 曾中断，导致 `@esbuild/win32-x64` 缺失（esbuild 报 `could not be found`）。已把它固定进 `devDependencies`（0.25.12），并在 `node_modules/@esbuild/win32-x64` 手工补齐。
-- 若重装依赖后 `npm test` 报 esbuild 平台包缺失，执行：
-  `npm i -D @esbuild/win32-x64@0.25.12`
+- 首次 `npm install` 曾中断，导致 Windows 的 esbuild 平台包缺失（esbuild 报 `could not be found`）。发布版不再直接依赖 Windows 专用包，由 esbuild 按运行系统安装对应的可选依赖。
+- 若重装依赖后提示 esbuild 平台包缺失，先清理不完整的 `node_modules` 并重新执行 `npm ci`。
 - 本机 curl 访问 127.0.0.1 会被代理拦（返回 502），验证服务请用浏览器或 `node -e` 直连。
 
 ---
