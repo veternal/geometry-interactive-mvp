@@ -1,0 +1,29 @@
+{
+  "name": "geometry-interactive-mvp-v2",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "description": "高中数学几何题互动解析 MVP — Plan V3 收口",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5273",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 5274",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "katex": "^0.16.22",
+    "vue": "^3.5.44"
+  },
+  "devDependencies": {
+    "@esbuild/win32-x64": "0.25.12",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "@vue/test-utils": "^2.5.1",
+    "happy-dom": "^21.0.3",
+    "typescript": "~5.6.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.2.4",
+    "vue-tsc": "^2.2.10"
+  }
+}
